@@ -279,48 +279,77 @@ body {
   margin-top: 70px;
 }
 
-.titulo-promo {
-  font-size: 25px;             /* Tamanho do texto */
-  font-weight: bold;           /* Negrito */
-  color: var(--dark-gray-2);     /* Cor do texto */
-  text-align: left;            /* Alinhamento do texto */
-  margin-top: 35px;  
-  margin-left: 70px;       /* Espaço abaixo */
+
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: auto;
+}
+--------------------------
+
+.titul {
+  font-size: 100px;
+  font-weight: bold;
 }
 
 .promo-cards {
-    background: linear-gradient(to bottom, white 0%, #f3f3f3 100%);
+  background: linear-gradient(to bottom, #f9f8fe 0%, #f9f8fe 100%);
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 300px;
   z-index: 2;
+  padding: 20px;
 }
 
-.card1 {
-  background-color: #D8E3F2;
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card1, .card2, .card3 {
   width: 400px;
   height: 235px;
-  position: relative; /* importante para posicionar a imagem dentro */
-  margin-left: -225px;
-  margin-top: 90px;
+  background-color: #D8E3F2;
+  position: relative;
   padding: 12px;
   border-radius: 10px;
-  overflow: hidden; /* evita que a imagem ultrapasse os limites */
+  overflow: hidden;
+  z-index: 1;
 }
 
-.card1-content {
+.card2 {
+  background-color: #FEE7E7;
+}
+
+.card3 {
+  background-color: #E7FFE8;
+}
+
+.card1-content, .card2-content, .card3-content {
   padding: 20px;
   display: flex;
-  flex-direction: column; /* ou row, dependendo do layout */
-  align-items: flex-start; /* NÃO use 'left' */
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
 
 .percent {
   position: relative;
-  margin-right: 10px;
   margin-bottom: 45px;
-  padding: 10px 10px;
+  padding: 10px;
   border-radius: 100px;
   border: none;
   background-color: #E7FF86;
@@ -329,6 +358,22 @@ body {
   letter-spacing: 0.5px;
   font-size: 15px;
   width: 115px;
+  display: flex;
+  justify-content: center;
+}
+
+.percent2 {
+  position: absolute;
+  margin-top: -30px;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  background-color: #E7FF86;
+  color: var(--dark-gray-2);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  width: 110px;
   display: flex;
   justify-content: center;
 }
@@ -345,9 +390,8 @@ body {
 }
 
 .btnbranco {
-   position: relative;
   margin-top: 15px;
-  padding: 13px 13px;
+  padding: 13px;
   border-radius: 8px;
   border: none;
   font-weight: bold;
@@ -358,7 +402,7 @@ body {
   color: var(--primary);
 }
 
-.card1-image {
+.card1-image, .card2-image, .card3-image {
   position: absolute;
   bottom: -20px;
   right: -20px;
@@ -367,88 +411,82 @@ body {
   transform: rotate(-20.78deg);
 }
 
-.card2, .card3 {
-  background-color: #D8E3F2; /* mesma cor que o card1, pode trocar */
-  width: 400px;
-  height: 235px;
-  position: relative;
-  padding: 12px;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Ajuste específico se quiser cores diferentes por card */
-.card2 {
-  background-color: #FEE7E7;
-  margin-left: 200px;
-  margin-top: -235px;
-}
-
-.card3 {
-  background-color: #E7FFE8;
-  margin-left: 620px;
-  margin-top: -235px;
-}
-
 .colecoes-destaque {
+  margin-top: 60px;
   text-align: center;
-  margin: 500px 0 40px;
-  margin-left: -1100px;
 }
 
 .colecoes-destaque h2 {
   font-size: 25px;
   font-weight: bold;
   color: var(--dark-gray-2);
-  margin-bottom: 40px;
   letter-spacing: 0.3px;
+  margin-bottom: 20px;
 }
 
 .botoes-colecoes {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 35px;
+  width: 100%;
+  padding: 20px;
 }
 
 .botoes-colecoes button {
-  background-color: var(--light-gray-3);
+  background-color: white;
   border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   cursor: pointer;
   transition: transform 0.2s ease;
-  padding: 15px;
-  
   font-weight: bold;
-  letter-spacing: 0.5px;
+  padding: 20px;
 }
 
 .botoes-colecoes button:hover {
   transform: scale(1.05);
-  background-color: var(--light-gray-2);
 }
 
 .botoes-colecoes img {
   width: 60px;
   height: 60px;
-  margin-bottom: 8px;
 }
 
-.botoes-colecoes span {
-  font-size: 14px;
-  color: var(--dark-gray-2);
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card1, .card2, .card3 {
+    width: 90%;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
 }
+
+
+
+
 
 
 .produtos-em-alta {
+  max-width: 1200px;      /* largura máxima que você quiser, ex: 1200px */
+  margin: 0 auto;         /* centraliza horizontalmente */
+  padding: 0 15px;        /* um padding lateral para não encostar na borda */
+  box-sizing: border-box; /* garante que padding não aumente largura */
+    text-align: center;
   padding: 40px 20px;
-  background-color: #f5f5f5; /* cor de fundo da seção */
+  background: none;
 }
 
 .topo-secao {
@@ -459,19 +497,19 @@ body {
 }
 
 .topo-secao h2 {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
-  color: #333;
+  color: var(--dark-gray-2);
 }
 
 .ver-todos {
-  background-color: #000;
-  color: #fff;
+  color: var(--primary);
+  background: none;
   border: none;
   padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
+  font-size: 19px;
   cursor: pointer;
+  letter-spacing: 1,7px;
 }
 
 .grid-produtos {
@@ -489,15 +527,6 @@ body {
   height: 310px;
   text-align: left;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-
-.info-produto {
-  margin-top: 15px;
-}
-
-.categoria {
-  font-size: 12px;
-  color: var(--light-gray);
 }
 
 .titulo-produto {
@@ -542,7 +571,14 @@ body {
   height: 200px;
 }
 
+.info-produto {
+  margin-top: 15px;
+  text-align: left;  /* Alinha o texto à esquerda */
+  margin-left: 0;    /* Remove margem à esquerda, se quiser */
+}
+
 .categoria {
   font-size: 15px;
   font-weight: bold;
+  color: var(--light-gray);
 }

@@ -108,8 +108,7 @@
       
       
       <div class="promo-cards">
-        <div class="titulo-promo"><h5>Coleções em destaque</h5></div>
-      
+        <h2 class="titul">Coleções em destaque</h2>
         <div class="cards-container">
           <div class="card1">
             <div class="card1-content">
@@ -127,7 +126,7 @@
           <div class="card2">
             <div class="card2-content">
               <h5 class="percent">30% OFF</h5>
-              <h1 class="titulo2">Coleção<br>Adidas</h1>
+              <h1 class="titulo">Coleção<br>Adidas</h1>
               <div class="card1-btn">
                 <button class="btnbranco" onclick="novaaba(this, 'produtos')">Comprar</button>
               </div>
@@ -140,7 +139,7 @@
           <div class="card3">
             <div class="card3-content">
               <h5 class="percent">30% OFF</h5>
-              <h1 class="titulo3">Novo<br>Beats Bass</h1>
+              <h1 class="titulo">Novo<br>Beats Bass</h1>
               <div class="card1-btn">
                 <button class="btnbranco" onclick="novaaba(this, 'produtos')">Comprar</button>
               </div>
@@ -149,62 +148,57 @@
               </div>
             </div>
           </div>
-        </div> <!-- fim de cards-container -->
-
+        </div>
+      
         <div class="colecoes-destaque">
           <h2>Coleções em destaque</h2>
           <div class="botoes-colecoes">
-            <button>
-              <img src="imagens/tshirt-_1_.svg" alt="Camisetas" draggable="false">
-              <span>Camisetas</span>
-            </button>
-            <button>
-              <img src="imagens/pants.svg" alt="Calças" draggable="false">
-              <span>Calças</span>
-            </button>
-            <button>
-              <img src="imagens/pants (1).svg" alt="Bonés" draggable="false">
-              <span>Bonés</span>
-            </button>
-            <button>
-              <img src="imagens/headphones_1.svg" alt="Headphones" draggable="false">
-              <span>Headphones</span>
-            </button>
-            <button>
-              <img src="imagens/sneakers.svg" alt="Tênis" draggable="false">
-              <span>Tênis</span>
-            </button>
+            <button><img src="imagens/tshirt-_1_.svg" alt="Camisetas" draggable="false"></button>
+            <button><img src="imagens/pants.svg" alt="Calças" draggable="false"></button>
+            <button><img src="imagens/pants (1).svg" alt="Bonés" draggable="false"></button>
+            <button><img src="imagens/headphones_1.svg" alt="Headphones" draggable="false"></button>
+            <button><img src="imagens/sneakers.svg" alt="Tênis" draggable="false"></button>
           </div>
         </div>
-      </div> 
-      </div>     
+      </div>
+      
+
+
+
       
 
       
       <!-- Seção Produtos em Alta -->
-<section class="produtos-em-alta">
-  <div class="topo-secao">
-    <h2>Produtos em alta</h2>
-    <button class="ver-todos">Ver todos</button>
-  </div>
-
-       
-  <div id="produtos-container" class="grid-produtos">
-    <div class="produto-box">
-      <div class="imagem-produto">
-        <img src="imagens/shoes3.png" draggable="false" alt="Tênis" />
-      </div>
-    </div>
-
-    <div class="info-produto">
-      <span class="categoria">Tênis</span>
-      <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
-      <div class="preco">
-        <span class="preco-antigo">$200</span>
-        <span class="preco-atual">$100</span>
-      </div>
-    </div>
-  </div>
+      <section class="produtos-em-alta">
+        <div class="topo-secao">
+          <h2>Produtos em alta</h2>
+          <button class="ver-todos">Ver todos →</button>
+        </div>
+      
+        <div id="produtos-container" class="grid-produtos">
+          
+          <div class="card">
+            <div class="produto-box">
+              <div class="imagem-produto">
+                <span class="percent2">30% OFF</span> <!-- Selo de promoção -->
+                <img src="imagens/shoes3.png" draggable="false" alt="Tênis" />
+              </div>
+            </div>
+            <div class="info-produto">
+              <span class="categoria">Tênis</span>
+              <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
+              <div class="preco">
+                <span class="preco-antigo">$200</span>
+                <span class="preco-atual">$100</span>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Repita o .card para os outros 7 produtos -->
+      
+        </div>
+      </section>
+      
   
 
 
@@ -225,27 +219,36 @@ cart.classList.toggle('active');
 }
 
 const produtosContainer = document.getElementById("produtos-container");
+produtosContainer.innerHTML = ""; // limpa antes
 
-for (let i = 0; i < 7; i++) { // já tem 1, então só precisa de mais 7
+for (let i = 0; i < 8; i++) {
+  const temDesconto = i < 2;
+  console.log(i, temDesconto); // para debug
+
+  const seloHTML = temDesconto ? `<span class="percent2">30% OFF</span>` : "";
+
   const card = `
     <div class="produto-box">
       <div class="imagem-produto">
+        ${seloHTML}
         <img src="imagens/shoes3.png" draggable="false" alt="Tênis" />
       </div>
-    </div>
-
-    <div class="info-produto">
-      <span class="categoria">Tênis</span>
-      <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
-      <div class="preco">
-        <span class="preco-antigo">$200</span>
-        <span class="preco-atual">$100</span>
+      <div class="info-produto">
+        <span class="categoria">Tênis</span>
+        <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
+        <div class="preco">
+          <span class="preco-antigo">$200</span>
+          <span class="preco-atual">$100</span>
+        </div>
       </div>
     </div>
-  </div>
   `;
+
   produtosContainer.innerHTML += card;
 }
+
+
+
 
 
 </script>
