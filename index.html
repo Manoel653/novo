@@ -173,31 +173,31 @@
         <div class="topo-secao">
           <h2>Produtos em alta</h2>
           <button class="ver-todos">Ver todos →</button>
+        </section>
+
+        <section>
+
+          <div id="produtos-container" class="grid-produtos">
+    <!-- Os cards serão adicionados aqui via JavaScript -->
+  </div>
+</section>
         </div>
       
-        <div id="produtos-container" class="grid-produtos">
-          
-          <div class="card">
-            <div class="produto-box">
-              <div class="imagem-produto">
-                <span class="percent2">30% OFF</span> <!-- Selo de promoção -->
-                <img src="imagens/shoes3.png" draggable="false" alt="Tênis" />
-              </div>
-            </div>
-            <div class="info-produto">
-              <span class="categoria">Tênis</span>
-              <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
-              <div class="preco">
-                <span class="preco-antigo">$200</span>
-                <span class="preco-atual">$100</span>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Repita o .card para os outros 7 produtos -->
-      
-        </div>
-      </section>
+
+
+      <section class="last-sect">
+  <div class="last-sect-imgs">
+    <img src="imagens/shoes4.png" alt="Tênis-main" class="principal">
+    <img src="imagens/Ellipse 11.png" alt="bg" class="fundo">
+  </div>
+
+  <div class="info-last-sect">
+    <span class="titulo-pequeno">Ofertas especiais</span>
+    <h2 class="titulo-grande">Air Jordan Edição de Colecionador</h2>
+    <p class="descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius quam vel justo facilisis volutpat.</p>
+    <button class="botao-oferta">Ver oferta</button>
+  </div>
+</section>
       
   
 
@@ -228,20 +228,23 @@ for (let i = 0; i < 8; i++) {
   const seloHTML = temDesconto ? `<span class="percent2">30% OFF</span>` : "";
 
   const card = `
-    <div class="produto-box">
-      <div class="imagem-produto">
-        ${seloHTML}
-        <img src="imagens/shoes3.png" draggable="false" alt="Tênis" />
-      </div>
-      <div class="info-produto">
-        <span class="categoria">Tênis</span>
-        <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
-        <div class="preco">
-          <span class="preco-antigo">$200</span>
-          <span class="preco-atual">$100</span>
-        </div>
+            <div class="card">
+  <div class="produto-box">
+    <div class="imagem-produto">
+      ${seloHTML}
+      <img src="imagens/shoes3.png" draggable="false" alt="Tênis" />
+    </div>
+    <div class="info-produto">
+      <span class="categoria">Tênis</span>
+      <h3 class="titulo-produto">K-Swiss V8 - Masculino</h3>
+      <div class="preco">
+        <span class="preco-antigo">$200</span>
+        <span class="preco-atual">$100</span>
       </div>
     </div>
+  </div>
+</div>
+
   `;
 
   produtosContainer.innerHTML += card;
