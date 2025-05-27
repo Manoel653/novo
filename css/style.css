@@ -414,7 +414,7 @@ body {
 }
 
 .colecoes-destaque {
-  margin-top: 60px;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -423,16 +423,15 @@ body {
   font-weight: bold;
   color: var(--dark-gray-2);
   letter-spacing: 0.3px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .botoes-colecoes {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 35px;
-  width: 100%;
-  padding: 20px;
+  gap: 4rem;
+  margin-top: 1rem;
 }
 
 .botoes-colecoes button {
@@ -451,6 +450,18 @@ body {
   padding: 20px;
 }
 
+.item-colecao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-colecao h5 {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: var(--dark-gray-3);
+}
+
 .botoes-colecoes button:hover {
   transform: scale(1.05);
 }
@@ -459,6 +470,7 @@ body {
   width: 60px;
   height: 60px;
 }
+
 
 @media (max-width: 768px) {
   .cards-container {
