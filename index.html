@@ -179,14 +179,7 @@
             </div>
           </div>
         </div>
-      
 
-
-
-      
-
-      
-      <!-- Seção Produtos em Alta -->
       <section class="produtos-em-alta">
         <div class="topo-secao">
           <h2>Produtos em alta</h2>
@@ -196,7 +189,6 @@
         <section>
 
           <div id="produtos-container" class="grid-produtos">
-    <!-- Os cards serão adicionados aqui via JavaScript -->
   </div>
 </section>
         </div>
@@ -205,15 +197,15 @@
 
       <section class="last-sect">
   <div class="last-sect-imgs">
-    <img src="imagens/shoes4.png" alt="Tênis-main" class="principal">
-    <img src="imagens/Ellipse 11.png" alt="bg" class="fundo">
+    <img src="imagens/shoes4.png" draggable="false" alt="Tênis-main" class="principal">
+    <img src="imagens/Ellipse 11.png" draggable="false" alt="bg" class="fundo">
   </div>
 
   <div class="info-last-sect">
-    <span class="titulo-pequeno">Ofertas especiais</span>
-    <h2 class="titulo-grande">Air Jordan Edição de Colecionador</h2>
-    <p class="descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius quam vel justo facilisis volutpat.</p>
-    <button class="botao-oferta">Ver oferta</button>
+    <span class="titulo-pequeno">Oferta especial</span>
+    <h2 class="titulo-grande">Air Jordan edição de<br>Colecionador</h2>
+    <p class="descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br>eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim<br>ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut<br>aliquip</p>
+    <button class="btnrosa2" onclick="novaaba(this, 'produtos')">Ver oferta</button>
   </div>
 </section>
       
@@ -237,12 +229,11 @@ cart.classList.toggle('active');
 }
 
 const produtosContainer = document.getElementById("produtos-container");
-produtosContainer.innerHTML = ""; // limpa antes
+produtosContainer.innerHTML = "";
 
 for (let i = 0; i < 8; i++) {
   const temDesconto = i < 2;
-  console.log(i, temDesconto); // para debug
-
+  console.log(i, temDesconto);
   const seloHTML = temDesconto ? `<span class="percent2">30% OFF</span>` : "";
 
   const card = `

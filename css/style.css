@@ -491,10 +491,10 @@ body {
   }
 }
 
-.produtos-em-alta {      /* largura máxima que você quiser, ex: 1200px */
-  margin: 0 auto;         /* centraliza horizontalmente */
-  padding: 0 15px;        /* um padding lateral para não encostar na borda */
-  box-sizing: border-box; /* garante que padding não aumente largura */
+.produtos-em-alta {    
+  margin: 0 auto;     
+  padding: 0 15px;       
+  box-sizing: border-box; 
     text-align: center;
   padding: 40px 20px;
   background: none;
@@ -534,8 +534,8 @@ body {
 .grid-produtos {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-   column-gap: 30px; /* espaço entre colunas (cards lado a lado) */
-  row-gap: 180px; 
+   column-gap: 30px; 
+  row-gap: 180px;
 }
 
 .produto-box {
@@ -543,8 +543,8 @@ body {
   background: white;
   border-radius: 7px;
   padding: 20px;
-  width: 290px;
-  height: 310px;
+  width: 280px;
+  height: auto;
   text-align: left;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
@@ -595,7 +595,6 @@ body {
 
 .info-produto {
   margin-top: 90px;
-  text-align: left;
   margin-left: -16px;
 }
 
@@ -615,21 +614,8 @@ z-index: 1;
 }
 
 .info-last-sect {
-  width: 400px;
-  height: 235px;
-  background-color: #D8E3F2;
-  position: relative;
-  padding: 12px;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
-  padding: 60px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-left: 600px;
+  margin-top: -200px;
 }
 
 .last-sect-imgs {
@@ -665,32 +651,17 @@ z-index: 1;
 }
 
 .titulo-grande {
-  font-size: 32px;
+  font-size: 45px;
   font-weight: 700;
   margin-bottom: 16px;
-  color: #333;
+  color: var(--dark-gray-2);
 }
 
 .descricao {
-  font-size: 16px;
-  color: #666;
+  font-size: 17px;
+  color: var(--light-gray);
   margin-bottom: 24px;
   line-height: 1.5;
-}
-
-.botao-oferta {
-  background-color: var(--primary, #FF4C4C);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.botao-oferta:hover {
-  background-color: #e64444;
 }
 
 #produtos-container {
@@ -700,4 +671,8 @@ z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.last-sect .btnrosa2 {
+  margin-top: 5px;
 }
